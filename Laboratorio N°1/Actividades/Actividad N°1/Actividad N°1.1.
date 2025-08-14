@@ -1,0 +1,23 @@
+#Actividad N°1 Lenguaje de Programacion
+def Suma (arreglo) : 
+    suma = 0
+    for i in arreglo:
+        suma = suma + int(i)
+    return suma
+
+
+arreglo = []
+tam = int(input("¿Cuántos elementos tendrá el arreglo?: "))
+
+for a in range (0, tam):
+    elemento = input(f"Ingrese el elemento N° {a+1}: ")
+    arreglo.append(elemento)
+
+
+for o in arreglo:
+    print(f"{o}" ,end=" ")
+print("\n")
+
+suma_total = Suma(arreglo)
+
+print(f"\nLa suma del arreglo es: {suma_total}")
