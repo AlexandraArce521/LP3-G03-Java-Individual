@@ -1,1 +1,78 @@
 
+#Actividad N°1  Lenguaje de Programacion
+#Actividad a
+def Suma (arreglo) : 
+    suma = 0
+    for i in arreglo:
+        suma = suma + int(i)
+    return suma
+
+
+arreglo = []
+tam = int(input("¿Cuántos elementos tendrá el arreglo?: "))
+
+for a in range (0, tam):
+    elemento = input(f"Ingrese el elemento N° {a+1}: ")
+    arreglo.append(elemento)
+
+
+for o in arreglo:
+    print(f"{o}" ,end=" ")
+print("\n")
+
+suma_total = Suma(arreglo)
+
+print(f"\nLa suma del arreglo es: {suma_total}")
+
+#Actividad b
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int Suma(int arreglo[], int tamano){
+    int suma = 0;
+    for(int i = 0; i < tamano; i++) {
+        suma += arreglo[i];
+    }
+    return suma;
+}
+
+
+int main() {
+    int tam = 3;
+    int numeros[] = {1,4,6};
+    
+    for (int elemento : numeros) {
+        cout << elemento << " ";
+    };
+    
+    cout << "\nLa suma del arreglo es: " << Suma(numeros, tam) << endl;
+    
+
+    return 0;
+}
+
+#Actividad c
+
+public class Main {
+    
+    public static int suma(int[] arreglo, int tamano) {
+        int suma = 0;
+        for (int i = 0; i < tamano; i++) {
+            suma += arreglo[i];
+        }
+        return suma;
+    }
+
+    public static void main(String[] args) {
+        int tam = 3;
+        int[] numeros = {1, 4, 6};
+
+        for (int elemento : numeros) {
+            System.out.print(elemento + " ");
+        }
+
+        System.out.println("\nLa suma del arreglo es: " + suma(numeros, tam));
+    }
+}
