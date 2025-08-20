@@ -1,1 +1,33 @@
-
+import java.util.Scanner; //Libreria para input por teclado
+public class Arreglo {
+    public static void main(String[] args) {
+      
+      Scanner entrada = new Scanner(System.in);
+      
+      int[] arreglo = new int[10]; //Declaracion e inicialización de arreglo
+      
+      int numeroActual;
+      int numeroMayor = -999;
+      
+          for(int i = 0; i < arreglo.length; i++) {
+              
+            do {
+                System.out.print("Ingrese el elemento N_"+ (i+1) + ": ");
+                numeroActual = entrada.nextInt();
+                
+                if(numeroMayor >= numeroActual) {
+                    System.out.print("(!)Numero incorrecto. Intente de nuevo\n ");
+                }
+            }while(numeroMayor >= numeroActual); //Fin de bucle for de comprobación
+            numeroMayor = numeroActual;
+            arreglo[i] = numeroMayor; 
+            } //Fin de bucle for agregar elemento
+    
+      System.out.print("{");
+      for(int o = 0; o < arreglo.length; o++) {
+          System.out.print(arreglo[o]+" ");
+      }//Fin de bucle mostrar
+      System.out.print("}");
+      
+  } //Fin del main
+}
