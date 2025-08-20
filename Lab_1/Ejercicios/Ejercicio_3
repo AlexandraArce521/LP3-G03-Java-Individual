@@ -7,7 +7,7 @@ public class TirarDado {
         int frecuencia[] = new int[7]; //Contador de frecuencia
         
         // El valor del dado es como el índice de frecuencia
-        for (int tiro = 1; tiro <= 10; tiro++) {
+        for (int tiro = 1; tiro <= 20000; tiro++) {
             ++frecuencia[1 + numerosAleatorios.nextInt(6)]; //Num aleatorios de 0 a 5
         }//Fin de bucle for para lanzamientos
       
