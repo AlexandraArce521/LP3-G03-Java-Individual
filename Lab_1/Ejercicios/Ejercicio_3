@@ -1,1 +1,21 @@
+import java.util.Random;
 
+public class TirarDado {
+    
+    public static void main(String args[]) {
+        Random numerosAleatorios = new Random(); //Genera numeros random
+        int frecuencia[] = new int[7]; //Contador de frecuencia
+        
+        // El valor del dado es como el índice de frecuencia
+        for (int tiro = 1; tiro <= 10; tiro++) {
+            ++frecuencia[1 + numerosAleatorios.nextInt(6)]; //Num aleatorios de 0 a 5
+        }//Fin de bucle for para lanzamientos
+      
+        System.out.printf("%s%10s\n", "Cara", "  Frecuencia");
+        
+        for (int cara = 1; cara < frecuencia.length; cara++) {
+            System.out.printf("%4d%10d\n", cara, frecuencia[cara]);
+        }//Fin de bucle for que imprime el valor de cada cara del dado
+        
+    }//Fin de main
+}
