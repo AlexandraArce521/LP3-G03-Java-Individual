@@ -1,1 +1,69 @@
+import java.util.Scanner; //Libreria para input por teclado
 
+public class CalculoSegundos {
+    
+    //Función para calcular las horas en segundos
+    public static int TotalSegundos(int horas, int minutos, int segundos) {
+        int transHoras = 0;
+        int transMinutos = 0;
+        int segundosTotal = 0;
+
+        transHoras = horas * 3600;
+        transMinutos = minutos * 60;
+        
+        segundosTotal = transHoras+transMinutos+segundos;
+        
+        return segundosTotal;
+    } //Fin de función
+
+    public static void main(String[] args) {
+        
+      Scanner entrada = new Scanner(System.in);
+      int horas = 0;
+      int minutos = 0;
+      int segundos = 0;
+      
+        //Horas
+      do {
+          System.out.print("Ingrese el numero de horas: ");
+          horas = entrada.nextInt();
+          
+          if(horas > 24 || horas < 0 ) {
+              System.out.print("(!)Error. Ingrese horas validas: ");
+              horas = entrada.nextInt();
+          }
+          
+      } while(horas > 24 || horas < 0);
+    
+        //Minutos   
+      do {
+          System.out.print("Ingrese el numero de minutos: ");
+          minutos = entrada.nextInt();
+          
+          if(minutos > 60 || minutos < 0) {
+              System.out.print("(!)Error. Ingrese minutos validas: ");
+              minutos = entrada.nextInt();
+          }
+          
+      } while(minutos > 60 || minutos < 0);  
+      
+      //Segundos
+      do {
+          System.out.print("Ingrese el numero de segundos: ");
+          segundos = entrada.nextInt();
+          
+          if(minutos > 60 || minutos < 0) {
+              System.out.print("(!)Error. Ingrese segundos validas: ");
+              segundos = entrada.nextInt();
+          }
+          
+      } while(segundos > 60 || segundos < 0);    
+      
+      int totalSegundos = TotalSegundos(horas, minutos, segundos);
+      
+      System.out.printf("El total de segundos es: %d s\n", totalSegundos);
+
+
+
+  } //Fin del main
+}
