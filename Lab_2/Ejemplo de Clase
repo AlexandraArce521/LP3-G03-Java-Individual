@@ -5,12 +5,36 @@ public class Coche {
 	private int velocidadMaxima;
 	private int potenciaMotor;
 	private boolean enMarcha;
+	
+	private String marca;
+	private int anioFabricacion;
+	private double precio;
+	
+	
 	// Constructor
 	public Coche(String modelo, int velocidadMaxima, int potenciaMotor) {
 		this.modelo = modelo;
 		this.velocidadMaxima = velocidadMaxima;
-		this.potenciaMotor = potenciaMotor;
+		this.setPotenciaMotor(potenciaMotor);
 		this.enMarcha = false; // El coche comienza apagado
+	}
+	
+	public Coche() {
+		this.modelo = " ";
+		this.velocidadMaxima = 0;
+		this.setPotenciaMotor(potenciaMotor);
+		this.enMarcha = false; // El coche comienza apagado
+		this.marca = "Sin marca";
+		this.anioFabricacion = 0000;
+		this.precio = 0.0;
+	}
+	
+	public Coche(String marca, String modelo, int anioFabricacion, double precio) {
+		this.marca = marca;
+		this.modelo = modelo;
+		this.anioFabricacion = anioFabricacion;
+		this.precio = precio;
+		
 	}
 	
 // Metodos get y set
@@ -38,6 +62,29 @@ public class Coche {
 		this.potenciaMotor = potenciaMotor;
 	}
 	
+	private String getMarca() {
+		return marca;
+	}
+
+	private void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	private int getAnioFabricacion() {
+		return anioFabricacion;
+	}
+
+	private void setAnioFabricacion(int anioFabricacion) {
+		this.anioFabricacion = anioFabricacion;
+	}
+	private double getPrecio() {
+		return precio;
+	}
+
+	private void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
 	// Metodos
 	public void acelerar() {
 		if (enMarcha) {
@@ -61,15 +108,32 @@ public class Coche {
 		enMarcha = false;
 		System.out.println("El coche " + modelo + " se ha apagado.");
 	}
+	
+	
+	public double aplicarDescuento(int anioFabricacion, double precio) {
+		if(anioFabricacion < 2010) {
+			precio = precio * 0.40;
+			System.out.println("El nuevo precio con 10% de descuento es: "+precio);
+			return precio;
+		} else {
+			System.out.println("No se aplica descuento, modelo nuevo/n");
+			this.setPrecio(precio);
+			return precio;
+		}
+	}
+
 }
 
 public class Main {
 	
 	 public static void main(String[] args) {
-		 Coche miCoche = new Coche("Toyota", 12, 80);
+		 Coche miCoche = new Coche("Ferrari", 12, 80);
 		 miCoche.encender();
 		 miCoche.acelerar();
 		 miCoche.frenar();
+		 
+		 Coche miCoche_2 = new Coche("Ferrari", "AJG-09", 2024, 8000.59);
+		 miCoche_2.aplicarDescuento(2000, 17657);
+
 	 }
-	
 }
