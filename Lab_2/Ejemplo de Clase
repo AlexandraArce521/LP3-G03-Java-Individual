@@ -12,6 +12,32 @@ public class Coche {
 		this.potenciaMotor = potenciaMotor;
 		this.enMarcha = false; // El coche comienza apagado
 	}
+	
+// Metodos get y set
+	public String getModelo() {
+		return modelo;
+	}
+	
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+	
+	public int getVelovidadMaxima() {
+		return velocidadMaxima;
+	}
+	
+	public void setVelocidadMaxima(int velocidadMaxima) {
+		this.velocidadMaxima = velocidadMaxima;
+	}
+	
+	public int getPotenciaMotor() {
+		return potenciaMotor;
+	}
+	
+	public void setPotenciaMotor(int potenciaMotor) {
+		this.potenciaMotor = potenciaMotor;
+	}
+	
 	// Metodos
 	public void acelerar() {
 		if (enMarcha) {
