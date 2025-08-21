@@ -25,13 +25,14 @@ public class Coche {
 		this.setPotenciaMotor(potenciaMotor);
 		this.enMarcha = false; // El coche comienza apagado
 		this.marca = "Sin marca";
-		this.anioFabricacion = 0000;
+		//this.anioFabricacion = 0000;
 		this.precio = 0.0;
+		this.setAnioFabricacion(anioFabricacion);
 	}
 	
 	public Coche(String marca, String modelo, int anioFabricacion, double precio) {
-		this.marca = marca;
-		this.modelo = modelo;
+		this.setMarca(marca);
+		this.setModelo(modelo);
 		this.anioFabricacion = anioFabricacion;
 		this.precio = precio;
 		
@@ -113,7 +114,7 @@ public class Coche {
 	public double aplicarDescuento(int anioFabricacion, double precio) {
 		if(anioFabricacion < 2010) {
 			precio = precio * 0.40;
-			System.out.println("El nuevo precio con 10% de descuento es: "+precio);
+			System.out.println("El nuevo precio del coche "+marca+" con 10% de descuento es: "+precio);
 			return precio;
 		} else {
 			System.out.println("No se aplica descuento, modelo nuevo/n");
@@ -121,8 +122,19 @@ public class Coche {
 			return precio;
 		}
 	}
+	
+	public void informacionCoche() {
+		System.out.print("\nINFORMACIÓN DEL COCHE\n-------------------\n");
+		System.out.println("Color: "+color);
+		System.out.println("Modelo: "+modelo);
+		System.out.println("Velocidad Máxima: "+velocidadMaxima);
+		System.out.println("Potencia del Motor: "+potenciaMotor);
+		System.out.println("¿Está en marcha?: "+enMarcha);
+		
+	}
 
 }
+
 
 public class Main {
 	
