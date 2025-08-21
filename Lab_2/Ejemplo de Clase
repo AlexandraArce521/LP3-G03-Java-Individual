@@ -1,0 +1,49 @@
+public class Coche {
+	// Atributos
+	public String color;
+	private String modelo;
+	private int velocidadMaxima;
+	private int potenciaMotor;
+	private boolean enMarcha;
+	// Constructor
+	public Coche(String modelo, int velocidadMaxima, int potenciaMotor) {
+		this.modelo = modelo;
+		this.velocidadMaxima = velocidadMaxima;
+		this.potenciaMotor = potenciaMotor;
+		this.enMarcha = false; // El coche comienza apagado
+	}
+	// Metodos
+	public void acelerar() {
+		if (enMarcha) {
+			System.out.println("El coche " + modelo + " esta acelerando.");
+		} else {
+			System.out.println("Primero enciende el coche.");
+		}
+	}
+	public void frenar() {
+		if (enMarcha) {
+			System.out.println("El coche " + modelo + " esta frenando.");
+		} else {
+			System.out.println("El coche esta apagado, no se puede frenar.");
+		}
+	}
+	public void encender() {
+		enMarcha = true;
+		System.out.println("El coche " + modelo + " se ha encendido.");
+	}
+	public void apagar() {
+		enMarcha = false;
+		System.out.println("El coche " + modelo + " se ha apagado.");
+	}
+}
+
+public class Main {
+	
+	 public static void main(String[] args) {
+		 Coche miCoche = new Coche("Toyota", 12, 80);
+		 miCoche.encender();
+		 miCoche.acelerar();
+		 miCoche.frenar();
+	 }
+	
+}
