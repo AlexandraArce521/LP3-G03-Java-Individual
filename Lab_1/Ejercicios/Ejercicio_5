@@ -1,1 +1,42 @@
+import java.util.Scanner; //Libreria para input por teclado
+
+public class CobroPorHora {
+    
+    public static double Cobro(int horas) {
+        double sumaHoras = 0;
+        for(int i = 1; i <= horas; i++) {
+            if(i == 1) {
+                sumaHoras = 3.0;
+            }
+            else {
+                sumaHoras +=0.5;
+            }
+        }
+        return sumaHoras;
+    }
+
+    public static void main(String[] args) {
+        
+      Scanner entrada = new Scanner(System.in);
+      
+      int horaEstacionamiento = 0;
+      String nombre = "Jose";
+
+      System.out.print("Ingrese el numero de horas de estacionamiento(Max 12$): ");
+      horaEstacionamiento = entrada.nextInt();
+
+      double total = Cobro(horaEstacionamiento);
+      
+      if(total > 12) {
+          System.out.println("(!)Error, No se puede estacionar por exceso de tiempo (Max 19h)\n");
+      } else {
+
+          System.out.println("\nBoleta de cobro");
+          System.out.println("___________________");
+          System.out.printf("Sr. %s\n", nombre);
+          System.out.printf("Su cobro es: $%.2f\n", total);
+      } //Fin de condicional
+      
+  } //Fin del main
+}
 
