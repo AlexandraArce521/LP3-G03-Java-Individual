@@ -1,0 +1,44 @@
+package Lan_N2;
+
+public class Motor {
+	
+	private int numMotor;
+	private int revolucionesPorMin;
+	
+	public Motor() {
+		this.setNumMotor(numMotor);
+		this.setRevolucionesPorMin(revolucionesPorMin);		
+	}
+	
+	public Motor(int numMotor, int revolucionesPorMin) {
+		this.setNumMotor(numMotor);
+		this.setRevolucionesPorMin(revolucionesPorMin);
+	}
+
+	protected int getNumMotor() {
+		return numMotor;
+	}
+
+	protected void setNumMotor(int numMotor) {
+		this.numMotor = numMotor;
+	}
+
+	protected int getRevolucionesPorMin() {
+		return revolucionesPorMin;
+	}
+
+	protected void setRevolucionesPorMin(int revolucionesPorMin) {
+		this.revolucionesPorMin = revolucionesPorMin;
+	}
+	
+	public String toString() {
+	    StringBuilder informacionMotor = new StringBuilder();
+	    
+	    informacionMotor.append("Información del motor\n")
+	               .append("Cantidad de motores: ").append(numMotor).append("\n")
+	               .append("Revoluciones por minuto: ").append(revolucionesPorMin).append("\n");
+	    
+	    return informacionMotor.toString();
+	}
+
+}
