@@ -1,0 +1,79 @@
+package Lan_N2;
+import java.util.Arrays;
+
+
+public class Automovil extends Motor{
+	//Atributos
+	private String placa;
+	private int numPuertas;
+	private String marca;
+	private String modelo;
+	private Motor motor;
+	
+	
+	
+	
+	//Constructor
+	
+	public Automovil() {
+		super();
+	}
+	
+	public Automovil (int numMotor, int revolucionesPorMin, String placa, int numPuertas, String marca, String modelo, Motor motorElegido) {
+		
+		super(numMotor, revolucionesPorMin);
+		this.setPlaca(placa);
+		this.setNumPuertas(numPuertas);
+		this.setMarca(marca);
+		this.setModelo(modelo);
+		this.motor = motorElegido;
+	}
+	
+	//Getts y Setts
+	private String getModelo() {
+		return modelo;
+	}
+
+	private void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	private String getMarca() {
+		return marca;
+	}
+
+	private void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	private int getNumPuertas() {
+		return numPuertas;
+	}
+
+	private void setNumPuertas(int numPuertas) {
+		this.numPuertas = numPuertas;
+	}
+
+	private String getPlaca() {
+		return placa;
+	}
+
+	private void setPlaca(String placa) {
+		this.placa = placa;
+	}
+	
+	//Metodos
+	public String toString() {
+	    StringBuilder informacion = new StringBuilder();
+	    
+	    informacion.append("Información del automóvil\n")
+	               .append("Marca: ").append(marca).append("\n")
+	               .append("Modelo: ").append(modelo).append("\n")
+	               .append("Número de Puertas: ").append(numPuertas).append("\n")
+	               .append("Placa: ").append(placa);
+	    
+	    return informacion.toString();
+	}
+
+	
+}
