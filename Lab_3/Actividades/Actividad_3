@@ -1,0 +1,41 @@
+
+//  SaldoInsuficienteException.java
+  public class SaldoInsuficienteException extends Exception {
+      public SaldoInsuficienteException(String mensaje) {
+          super(mensaje);
+      }
+  }
+
+//RetiroException.java
+
+import java.util.Scanner;
+
+class RetiroException {
+
+    public static double retiroBanco(double saldo, double retirarDeSaldo)  throws SaldoInsuficienteException {
+        if(saldo < retirarDeSaldo) {
+            throw new SaldoInsuficienteException("No se puede retirar, Saldo insuficiente");
+        }
+        
+        saldo = saldo - retirarDeSaldo;
+        return saldo;
+    }
+    
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+        
+        System.out.print("Ingrese su saldo: ");
+        double saldo = entrada.nextDouble();
+        
+        System.out.print("Ingrese el retiro de saldo: ");
+        double retirarDeSaldo = entrada.nextDouble();
+        
+        try {
+            retiroBanco(saldo, retirarDeSaldo);
+            
+        } catch (SaldoInsuficienteException obj) {
+            System.out.println("Error: "+ obj.getMessage());
+        }
+    }
+}
