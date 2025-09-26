@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 
 public class Pila <T> {
@@ -44,9 +43,11 @@ public class Pila <T> {
   
   public boolean isEmpty() {
     if(puntero == -1) {
+      System.out.println("¿La Pila esta vacía?: Verdadero");
       return true;
     }
-    
+
+    System.out.println("¿La Pila esta vacía?: Falso");
     return false;
     
   }
