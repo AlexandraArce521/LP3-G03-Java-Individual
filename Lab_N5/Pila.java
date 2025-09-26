@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+
+import java.util.Collections;
+
 public class Pila <T> {
   public int puntero; //Ultimo elemento de la Pila
   public int tamanio; // Tamaño de la Pila
@@ -93,4 +96,23 @@ public class Pila <T> {
     
   }
   
+  public void invertir() throws ExceptionPilaVacia {
+    
+      //Collections.reverse(elementos);
+      
+      //System.out.println(elementos);
+
+
+
+        ArrayList<T> listaInvertida = new ArrayList<>();
+        for (int i = elementos.size() - 1; i >= 0; i--) {
+            listaInvertida.add(elementos.get(i));
+        }
+
+        System.out.println("  * Pila original: " + elementos);
+        System.out.println("  * Pila invertida: " + listaInvertida);
+    }
+
+  
 }
+
