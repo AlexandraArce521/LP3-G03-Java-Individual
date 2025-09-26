@@ -1,34 +1,44 @@
+
 import java.util.ArrayList;
 
 public class Pila <T> {
-  public int puntero;
-  public int tamanio;
+  public int puntero; //Ultimo elemento de la Pila
+  public int tamanio; // Tamaño de la Pila
   public ArrayList <T> elementos;
   
-  public Pila() {
+  public Pila(int tamanio) {
     this.puntero = -1;
     this.tamanio = tamanio;
-    ArrayList <T> elementos = new ArrayList<>();
+    elementos = new ArrayList<>();
   }
   
-  public void push(T elemento) throws ExceptionPilaLLena {
+  public T push(T elemento) throws ExceptionPilaLLena {
     if(puntero == tamanio-1) {
       System.out.println("Error. Pila llena");
       throw new ExceptionPilaLLena("No se puede ingresar más elementos");
     }
     
     elementos.add(elemento);
-    ++puntero;
+    
+    T valor = elemento;
+    
+    puntero++;
+    
+    return elemento;
   }
   
-  public void pop(T elemento) throws ExceptionPilaVacia {
+  public T pop() throws ExceptionPilaVacia {
     if(puntero == -1) {
       System.out.println("Error. Pila vacía");
       throw new ExceptionPilaVacia("No se puede eliminar elemento inexistente");
     }
     
-    elemento.remove(elemento);
-    --puntero;
+    T valor = elementos.remove(puntero);
+    
+    puntero--;
+    
+    return valor;
+    
     
   }
   
@@ -47,7 +57,33 @@ public class Pila <T> {
       throw new ExceptionPilaVacia("No se puede mostrar el ultimo elemento en pila vacia");
     }
     
-    return elementos[tamanio-1];
+    System.out.println("Ultimo elemento de la Pila: " + elementos.get(puntero));
+    
+    T valor = elementos.get(puntero);
+    
+    return valor;
+    
+  }
+  
+  public void limpiarPila() {
+    System.out.println("Pila vaciada exitosamente");
+    elementos.clear();
+  }
+  
+  public void mostrarPila() throws ExceptionPilaVacia {
+    
+    if(elementos.size() == 0) {
+      System.out.println("No hay elementos en la Pila");
+      throw new ExceptionPilaVacia("No se puede mostrar los elementos si la Pila esta vacía");
+
+    }
+    
+    for(int i = elementos.size() - 1; i >= 0; i--) {
+      System.out.print("| "+ elementos.get(i)+ " |\n");
+    }
+    
+    System.out.print("_____");
+    System.out.println("\nElementos en la Pila: "+ elementos.size());
     
   }
   
