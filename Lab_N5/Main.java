@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-      Pila pila = new Pila(10);
+      Pila pila = new Pila(100);
       
       try {
         
@@ -33,6 +33,7 @@ public class Main {
           
           pila.mostrarPila();
           
+
           pila.pop();
 
           pila.mostrarPila();
@@ -41,13 +42,17 @@ public class Main {
           pila.peek(); 
           
           pila.isEmpty();
+          
+          System.out.println("Pila Invertida:");
+
+          pila.invertir();
+
+
 
           pila.limpiarPila();
           
           pila.mostrarPila();
           
-          
-
           
       } catch(ExceptionPilaLLena e) {
         
@@ -58,6 +63,5 @@ public class Main {
       }
       
       
-
   }
 }
