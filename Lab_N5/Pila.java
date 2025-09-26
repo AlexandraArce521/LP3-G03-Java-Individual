@@ -9,7 +9,7 @@ public class Pila <T> {
   public Pila(int tamanio) {
     this.puntero = -1;
     this.tamanio = tamanio;
-    elementos = new ArrayList<>();
+    elementos = new ArrayList<>(tamanio);
   }
   
   public T push(T elemento) throws ExceptionPilaLLena {
@@ -66,7 +66,11 @@ public class Pila <T> {
   }
   
   public void limpiarPila() {
+    
     System.out.println("Pila vaciada exitosamente");
+    
+    puntero = -1;
+    
     elementos.clear();
   }
   
