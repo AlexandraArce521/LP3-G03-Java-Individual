@@ -82,6 +82,7 @@ public class Pila <T> {
 
     }
     
+    System.out.print("\n");
     for(int i = elementos.size() - 1; i >= 0; i--) {
       System.out.print("| "+ elementos.get(i)+ " |\n");
     }
