@@ -7,7 +7,6 @@ public class PruebaPar {
       Par<Integer, String> par2 = new Par<>(3, "Adios");
       
       System.out.println(par1);
-      
 
       System.out.println(par1);
       
