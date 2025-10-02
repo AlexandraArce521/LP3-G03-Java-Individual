@@ -26,10 +26,8 @@ public class Par <F, S> {
   
   public boolean esIgual(Object obj) {
     
-    if(this == obj) {
-      return true;
-    }
-    return false;
+    Par<F, S> otro = (Par<F, S>) obj;
+    return primero.equals(otro.primero) && segundo.equals(otro.segundo);
     
   }
   
