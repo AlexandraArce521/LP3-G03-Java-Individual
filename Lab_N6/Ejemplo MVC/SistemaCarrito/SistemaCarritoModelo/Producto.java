@@ -7,7 +7,7 @@ public class Producto {
   protected String identificador;
   protected String descripcion;
   
-  public Producto(String nombre; String identificador) {
+  public Producto(String nombre, double peso, double precio, String categoria, String identificador, String descripcion) {
     
     this.setNombre(nombre);
     this.setPeso(peso);
@@ -64,6 +64,16 @@ public class Producto {
 
   public void setNombre(String nombre) {
 	  this.nombre = nombre;
+  }
+  
+  @Override
+  public String toString() {
+    return "  Nombre: " + nombre +
+           "\n|Peso: " + peso + " kg" +
+           "\n|Precio: S/ " + precio +
+           "\n|Categoría: " + categoria +
+           "\n|Código: " + identificador +
+           "\n|Descripción: " + descripcion;
   }
 
 }
