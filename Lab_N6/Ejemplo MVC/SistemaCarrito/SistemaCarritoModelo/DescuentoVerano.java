@@ -8,7 +8,7 @@ public class DescuentoVerano implements AplicadorDescuento
         double descuento = 0;
 
 
-        if (total > 1) {
+        if (total > 100) {
             descuento = total * 0.10;
         }
 
