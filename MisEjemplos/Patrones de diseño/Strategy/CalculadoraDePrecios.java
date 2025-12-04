@@ -6,6 +6,6 @@ class CalculadoraDePrecios {
   }
   
   public double calcularPrecio(double precio) {
-    return descuentoEstrategia.applyDiscount(precio);
+    return descuentoEstrategia.aplicarDescuento(precio);
   }
 }
