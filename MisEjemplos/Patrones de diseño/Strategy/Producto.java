@@ -4,7 +4,7 @@ public class Producto {
 
   public Producto(String nombre, double precio) {
     this.nombre = nombre;
-    this.precio = precio,
+    this.precio = precio;
   }
   
   public String getNombre() {
