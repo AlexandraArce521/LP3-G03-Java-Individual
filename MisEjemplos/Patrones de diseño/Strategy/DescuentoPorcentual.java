@@ -1,10 +1,10 @@
-public class DescuentoPorcentual {
+public class DescuentoPorcentual implements DescuentoEstrategia {
   public int codProduct1;
   public int codProduct2;
   
   public DescuentoPorcentual(int cod1, int cod2) {
-    this.codProduct1 = this.cod1;
-    this.codProduct2 = this.cod2;
+    this.codProduct1 = cod1;
+    this.codProduct2 = cod2;
   }
   
   @Override
