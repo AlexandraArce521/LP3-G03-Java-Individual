@@ -1,35 +1,66 @@
 import java.util.*;
 
-public interface ColaArray <T> implements Cola {
-    public int inicio;
-    public int fin;
-    public ArrayList<T> array;
-    public int tamanio = 0;
-    public int cantidad = 0;
-    
-    public ColaArray(ArrayList array, int tamanio) {
+public class ColaArray<T> implements Cola<T> {
+
+    private int inicio;
+    private int fin;
+    private ArrayList<T> array;
+    private int tamanio;
+    private int cantidad;
+
+    public ColaArray(int tamanio) {
+        this.tamanio = tamanio;
         this.inicio = 0;
-        this.fin = 0;
-        ArrayList<T> array = new ArrayList<>(tamanio);
+        this.fin = -1;
+        this.cantidad = 0;
+
+        this.array = new ArrayList<>(tamanio);
+
+        // Inicializar con null para poder usar set()
+        for (int i = 0; i < tamanio; i++) {
+            array.add(null);
+        }
     }
-    
+
     @Override
     public void enqueue(T x) {
-        if(isFull) {
-            throw new RuntimeException ("Esta lleno la cola");
+        if (isFull()) {
+            throw new RuntimeException("La cola está llena");
         }
-        else {
-            fin = (fin+1)%tamanio;
-            array[final] = x;
-            cantidad++;
-        }
+
+        fin = (fin + 1) % tamanio;
+        array.set(fin, x);
+        cantidad++;
     }
-    
+
+    @Override
+    public T dequeue() {
+        if (isEmpty()) {
+            throw new RuntimeException("La cola está vacía");
+        }
+
+        T dato = array.get(inicio);
+        inicio = (inicio + 1) % tamanio;
+        cantidad--;
+        return dato;
+    }
+
+    @Override
+    public T front() {
+        if (isEmpty()) {
+            throw new RuntimeException("La cola está vacía");
+        }
+
+        return array.get(inicio);
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return cantidad == 0;
+    }
+
     @Override
     public boolean isFull() {
-        if(cantidad == tamanio) {
-            return true;
-        }
-        return false;
+        return cantidad == tamanio;
     }
 }
